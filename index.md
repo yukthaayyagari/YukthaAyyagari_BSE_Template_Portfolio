@@ -13,7 +13,7 @@ This is an HTML comment in Markdown -->
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
-![Headstone Image](logo.svg)
+![Headstone Image](headshot.heic)
   
 <!---# Final Milestone
 
@@ -97,7 +97,7 @@ As a starter project, I chose to build the Retro Arcade Game Console. I chose th
 The games are displayed on the LED (Light Emitting Diode) DOT MATRIX module. Data is sent to the module through control signals from the microcontroller, defining which LEDs should be on or off. More details in the section below.
 
 Below is a picture of the labeled features on the starter project:
-(Screen Shot 2024-06-13 at 11.28.10 AM.png)
+![Headstone Image](buttonfunctions.png)
 
 
 Schematic Diagram:
