@@ -11,8 +11,7 @@ This is an HTML comment in Markdown -->
 |:--:|:--:|:--:|:--:|
 | Yuktha A | Dougherty Valley High School | Civil Engineering | Incoming Senior
 
-![Headstone Image](headshot.png)"
-
+<img src="headshot.png" alt="photo of yuktha" width="500" height="600">
   
 <!---# Final Milestone
 
