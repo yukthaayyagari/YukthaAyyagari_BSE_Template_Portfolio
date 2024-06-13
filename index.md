@@ -95,5 +95,7 @@ As a starter project, I chose to build the Retro Arcade Game Console. I chose th
 The games are displayed on the LED (Light Emitting Diode) DOT MATRIX module. Data is sent to the module through control signals from the microcontroller, defining which LEDs should be on or off. More details in the section below.
 
 Below is a picture of the labeled features on the starter project:
+(Screen Shot 2024-06-13 at 11.28.10 AM.png)
+(logo.svg)
 
 To watch the BSE tutorial on how to create a portfolio, click here.
