@@ -96,6 +96,29 @@ The games are displayed on the LED (Light Emitting Diode) DOT MATRIX module. Dat
 
 Below is a picture of the labeled features on the starter project:
 (Screen Shot 2024-06-13 at 11.28.10 AM.png)
-(logo.svg)
+
+
+Schematic Diagram:
+
+
+Components Used:
+12mm Buzzer
+Electric Capacitator
+Self-switch
+IC (Integrated Circuit) Chip 
+Digitron Display/ 7-segment display: The score is displayed on a 7-segment display that works by illuminating specific segments out of seven to form numbers or characters.
+
+LED dot matrix module: An LED dot matrix module creates patterns or characters by rapidly scanning rows or columns of LEDs and controlling which are lit through multiplexing and control circuitry.  
+
+Button Schematic Diagram:
+
+
+
+In this console, a button works by closing an electrical circuit and sending a signal to the microcontroller. The microcontroller will detect the signal, process it through its preset instructions, and then trigger the corresponding action in the game. Once triggered, the microcontroller will update the LED dot matrix module to make the following changes. The microcontroller controls the rows and columns of the LED matrix using multiplexing, ensuring that the right visual display is on the module.
+
+Challenges:
+Despite the project seeming smooth, there were quite a lot of difficulties I faced along the way. As I was attaching the outer acrylic frame, the side piece cracked, blocking my way of connecting the USB port to power the console. Another challenge I faced was regarding the buzzer. My 12 mm buzzer was originally soldered in the wrong direction. When trying to desolder it, the wires snapped and got stuck in the PCB. After an hour of trying different methods to remove the wire, I ended up having to start over my entire project. A lesson I learned is that sometimes you have to restart, but you will be more efficient and effective the second time around. I’m excited to start my main project: Sound Reactive Paper Lanterns. 
+
+
 
 To watch the BSE tutorial on how to create a portfolio, click here.
