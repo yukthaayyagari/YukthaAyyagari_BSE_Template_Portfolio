@@ -87,7 +87,7 @@ One of the best parts about Github is that you can view how other people set up 
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
  -->
 
-STARTER PROJECT:
+### STARTER PROJECT:
 
 
 As a starter project, I chose to build the Retro Arcade Game Console. I chose this project because I love gaming in my free time. The games included in the kit are Tetris, snakes, race cars, space invaders, and slot machines. There are several components in this console, and they’re listed in the section: Components Used. A vital piece is the microcontroller as it drives the other functions. The main concept of this project is the microcontroller can detect when a key is pressed and decide accordingly.
@@ -98,7 +98,7 @@ Below is a picture of the labeled features on the starter project:
 ![Headstone Image](buttonfunctions.png)
 
 
-Schematic Diagram:
+### Schematic Diagram:
 ![Headstone Image](overallschematic.png)
 
 Components Used:
@@ -110,13 +110,13 @@ Digitron Display/ 7-segment display: The score is displayed on a 7-segment displ
 
 LED dot matrix module: An LED dot matrix module creates patterns or characters by rapidly scanning rows or columns of LEDs and controlling which are lit through multiplexing and control circuitry.  
 
-Button Schematic Diagram:
+### Button Schematic Diagram:
 
-![Headstone Image](button.png)
+<img src="button.png" alt="button schematic" width="700" height="300">
 
 In this console, a button works by closing an electrical circuit and sending a signal to the microcontroller. The microcontroller will detect the signal, process it through its preset instructions, and then trigger the corresponding action in the game. Once triggered, the microcontroller will update the LED dot matrix module to make the following changes. The microcontroller controls the rows and columns of the LED matrix using multiplexing, ensuring that the right visual display is on the module.
 
-Challenges:
+### Challenges:
 
 Despite the project seeming smooth, there were quite a lot of difficulties I faced along the way. As I was attaching the outer acrylic frame, the side piece cracked, blocking my way of connecting the USB port to power the console. Another challenge I faced was regarding the buzzer. My 12 mm buzzer was originally soldered in the wrong direction. When trying to desolder it, the wires snapped and got stuck in the PCB. After an hour of trying different methods to remove the wire, I ended up having to start over my entire project. A lesson I learned is that sometimes you have to restart, but you will be more efficient and effective the second time around. I’m excited to start my main project: Sound Reactive Paper Lanterns. 
 
