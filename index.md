@@ -1,16 +1,16 @@
 # Sound Reactive Paper Lanterns
 (315) Sound Reactive Paper Lanterns: Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
 
-This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
--->
- | **Engineer** | **School** | **Area of Interest** | **Grade** |
+| **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Yuktha A | Dougherty Valley High School | Civil Engineering | Incoming Senior
 
 <img src="headshot.png" alt="photo of yuktha" width="500" height="600">
   
+<!---This is an HTML comment in Markdown -->
+<!--- Anything between these symbols will not render on the published site -->
+
+
 <!---# Final Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
@@ -66,7 +66,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
-```
+
 
 <!---# Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
