@@ -1,12 +1,10 @@
-# Project Name Here
+# Sound Reactive Paper Lanterns
 (315) Sound Reactive Paper Lanterns: Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
 This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
 ```
-
+-->
  | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Yuktha A | Dougherty Valley High School | Civil Engineering | Incoming Senior
@@ -70,7 +68,7 @@ void loop() {
 }
 ```
 
-# Bill of Materials
+<!---# Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
 
