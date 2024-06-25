@@ -47,7 +47,9 @@ After ensuring the power rail had a power source using a multimeter, I arranged 
 Since the lantern ring had a “data in” and “data out” wire, I cut the power rail’s middle data wire, making the side that was closer to power the “data IN” and the further side to be the “data OUT”. Exposing the power and ground wires made my connection process a lot easier. To connect the power and ground wires, I twisted the striped wire from the lantern ring around the exposed section of the striped power wire on the power rail. For the data wires, I twisted the “data IN” wires and the “data OUT” wires to their corresponding wires on the power rail. I went ahead and soldered all the points together. I did the same process with all five lanterns. To ensure that  there was power in all the lanterns, I double-checked all the connections with a multimeter.
 Below is the wiring diagram of the lanterns:
 
-TWO WIRING PICTURES/ DIAGRAMS
+
+<img src="splitdatawire.png" alt="data wire split" width="500" height="250">
+<img src="wiringdiagram.png" alt="data wire split" width="500" height="250">
 
 ### CHALLENGES:
 When I first attached all the lanterns on the power rail and plugged everything in, only one light was lighting up. I thought it was an electrical issue, so I wrapped electrical tape on every single solder point to make sure there was nothing was incorrectly connected. I checked for continuity multiple times as well. The remaining four lanterns still haven’t lit up though, so I did some research on the WLED website. After countless amount of times not being able to get the lights to light up, I tried looking at the configuration settings on the WLED website. The length was set to lighting only 12 pixels instead of all 60 throughout all five rings. After I changed the setting, the lights all lit up successfully. 
@@ -80,36 +82,34 @@ Female DC Power adapter
 
 ### Feather ESP V2 Schematic:
 
-PICTURE
+<img src="featherschematic.png" alt="data wire split" width="500" height="300">
 
 
-To begin, I cut the female JST connector and screwed it into the Female DC power adapter, which had a 2.1mm DC jack on one end and a screw terminal block on the other. The red wire is screwed into positive, representing the power. On the other hand, the black wire is screwed into the negative part of the screw terminal, representing ground. This red-to-power and black-to-ground is standard convention.
+To begin, I cut the female JST connector and screwed it into the Female DC power adapter, which had a 2.1mm DC jack on one end and a screw terminal block on the other. The red wire is screwed into positive, representing the power. On the other hand, the black wire is screwed into the negative part of the screw terminal, representing ground. This red-to-power and black-to-ground is the standard convention.
 
-Next, I soldered the data wire, the middle wire on my 3-pin JST connector, onto pin 12 on my Feather. In order to feed power into the Feather and my lights, I then soldered my leftmost red wire with the female and male JST connector that was already connected to the Feather. I did the same thing with my rightmost black wires with the corresponding black wires on the JST connector. It was important to stay consistent with which wire I was using. To avoid confusion, I used electrical tape and color-coded all my wires. 
+Next, I soldered the data wire, the middle wire on my 3-pin JST connector, onto pin 12 on my Feather. To feed power into the Feather and my lights, I then soldered my leftmost red wire with the female and male JST connector that was already connected to the Feather. I did the same thing with my rightmost black wires with the corresponding black wires on the JST connector. It was important to stay consistent with which wire I was using. To avoid confusion, I used electrical tape and color-coded all my wires. 
 
-
-PICTURE
-PICtuRE
+<img src="jstconnectorlabeled.png" alt="data wire split" width="550" height="500">
+<img src="overviewjst.png" alt="data wire split" width="300" height="300">
 
 ### STAND WIRING:
 
 Next, I moved on to creating my lights. I used 5 NeoPixel Ring - 5050 RGB LED with Integrated Drivers. To hang the lights up, I used a 4-wire 26awg Silicone-Coated Ribbon Cable. I used different lengths of cable for each Neo Ring to make each lantern hang at a different length in the future. To attach the cable to the ring, I soldered each to a piece of ribbon cable. Each ring had a particular order that had to be soldered on. 
-
 Striped wire: 5V(Power)  2nd wire: data OUT 3rd wire: data IN 4th wire: Ground. 
 
-PICTURE
+<img src="standwiring.png" alt="data wire split" width="300" height="250">
 
 ### CHALLENGES:
-When I first started my project, I wasn’t able to download the software on the feather. After using a different device, got the software onto the feather. The software only works on a network less than 5G, so I had trouble connecting all the devices. I overcame this issue by connecting to a peer’s hotspot and use their downloaded software on a non-apple product in order to connect. 
+When I first started my project, I wasn’t able to download the software on the Feather. After using a different device, got the software onto the feather. The software only works on a network less than 5G, so I had trouble connecting all the devices. I overcame this issue by connecting to a peer’s hotspot and using their downloaded software on a non-apple product to connect. 
 
-Another challenge I faced was connecting the wires together. I had difficulty in twisting, soldering, and heat shrinking multiple wires together. I overcame this issue by stripping more wire ad adding a bigger size of heat shrink on the set of wires. 
+Another challenge I faced was connecting the wires. I had difficulty in twisting, soldering, and heat-shrinking multiple wires together. I overcame this issue by stripping more wire and adding a bigger size of heat shrink on the set of wires. 
 
 ### NEXT STEPS:
 
-The next milestone includes of assembling all the lanterns and attaching them on a power rail. I am excited to see how I progress through this project. 
+The next milestone includes of assembling all the lanterns and attaching them to a power rail. I am excited to see how I progress through this project. 
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resources for creating professional schematic diagrams, though BSE recommends Tinkercad because it can be done easily and for free in the browser. 
 
 
 
@@ -119,9 +119,9 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Adafruit ESP32 Feather V2 - 8MB Flash + 2 MB PSRAM | What the item is used for | $19.95 | <a href="https://www.adafruit.com/product/5400"> Link </a> |
+| NeoPixel Ring - 5 x 5050 RGB LED with Integrated Drivers | What the item is used for | $7.50 | <a href="https://www.adafruit.com/product/1643"> Link </a> |
+| Paper Lanterns| What the item is used for | $Price | <a href="https://www.amazon.com/dp/B0757KS4L8?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_JMMSSZR94M6K803XZNP4"> Link </a> |
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
