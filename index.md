@@ -11,7 +11,7 @@
 <!--- Anything between these symbols will not render on the published site -->
 
 
-# Final Milestone
+<!---T# Final Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
@@ -23,7 +23,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE
 
-
+ -->
 
 # Second Milestone
 
@@ -121,15 +121,20 @@ Don't forget to place the link of where to buy each component inside the quotati
 |:--:|:--:|:--:|:--:|
 | Adafruit ESP32 Feather V2 - 8MB Flash + 2 MB PSRAM | What the item is used for | $19.95 | <a href="https://www.adafruit.com/product/5400"> Link </a> |
 | NeoPixel Ring - 5 x 5050 RGB LED with Integrated Drivers | What the item is used for | $7.50 | <a href="https://www.adafruit.com/product/1643"> Link </a> |
-| Paper Lanterns| What the item is used for | $Price | <a href="https://www.amazon.com/dp/B0757KS4L8?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_JMMSSZR94M6K803XZNP4"> Link </a> |
+| Paper Lanterns| What the item is used for | $17.99 | <a href="https://www.amazon.com/dp/B0757KS4L8?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_JMMSSZR94M6K803XZNP4"> Link </a> |
+|4-wire 26awg Silicone Coated Ribbon Cable | What the item is used for | $19.98 | <a href="https://www.amazon.com/dp/B07PMS4WNN?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_6S4PN0M8W63V88Q4RCYG_1"> Link </a> |
+| JST Connector x 1 | What the item is used for | $1.50 | <a href="https://www.adafruit.com/product/1663"> Link </a> |
+| Female DC Power Adapter | What the item is used for | $2.00 | <a href="https://www.adafruit.com/product/368"> Link </a> |
+| 5v 2A Power Supply| What the item is used for | $7.95 | <a href="https://www.adafruit.com/product/276"> Link </a> |
+| JST 2-pin Extension Cable with On/Off Switch | What the item is used for | $2.95 | <a href="https://www.adafruit.com/product/3064"> Link </a> |
 
-# Other Resources/Examples
+<!---# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
-
+-->
 # STARTER PROJECT:
 
 
