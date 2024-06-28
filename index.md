@@ -1,5 +1,5 @@
 # Sound Reactive Paper Lanterns
-(315) Sound Reactive Paper Lanterns: Transform your space with vibrant, sound-reactive paper lanterns controlled by an ESP32 Feather and the WLED software. This project combines Wifi-enabled lighting and LEDfx sound analysis to create a light show responding to music. Look closely to see the aspects of this enticing project!
+(315) Sound-Reactive Paper Lanterns: Transform your space with vibrant, sound-reactive paper lanterns controlled by an ESP32 Feather and the WLED software. This project combines Wifi-enabled lighting and LEDfx sound analysis to create a light show responding to music. Look closely to see the aspects of this enticing project!
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -11,24 +11,34 @@
 <!--- Anything between these symbols will not render on the published site -->
 
 
-<!---T# Final Milestone
+# Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
 
- -->
+----------------------------
+The third milestone was all about making the lanterns reactive to sound. Apart from WLED software, I used the LEDfx software to run the lanterns. LEDfx software is a program on a computer that analyzes and captures sound and provides real-time audio effects. The difference between LEDfx and WLED is that LEDFx specializes in sound-reactive lighting effects, while WLED is used to enable WiFi-controlled LED strips with home automation integration.
+
+This downloading process took me a long time as several steps existed before installing LEDfx. I needed to have Python 3.9, and dependencies such as Homebrew and pip installed as well. Pip Install is a virtual environment and a command to install packages from package repositories. Packages are software applications that are made up of many files in a grouped format. I ran these applications using command lines on the Terminal. Once I was able to open the app, I connected the appropriate WLED device and changed the audio settings. 
+
+I named my device “Spheres” and was able to customize the effects as it was easier to identify my device. LEDfx app allowed me to explore the different settings and effect types that the lanterns can change into. There were multiple presets and effect configurations as well. I also downloaded the WLED app on my phone to connect to make the user configurations easier.
+
+PICTURES
+
+### Challenges:
+
+Despite being the shortest milestone, I encountered the most difficulty during its completion. I struggled with troubleshooting simple software issues, which made installing these applications significantly harder, taking me around two days to install the LEDfx software itself. I overcame these challenges by researching online and meticulously following installation instructions. Another issue I faced was that my lights weren’t properly reacting to sound using the software. After deleting the entire application and restarting my computer multiple times, I successfully resolved this issue, and my lights began working perfectly.
+
+So far, in this project, I learned many key engineering topics. I was exposed to the electrical aspect, mechanical, and software as well. There were several times when I didn’t know the topic and the concept behind what I was doing. Through a lot of research, I learned that I have to explore around and try everything to see what I like. I have about 3 weeks left here at BSE, so I hope to add my modifications to this project. With the time I have, I want to attempt to make my project more personal to me.
+
+
 
 # Second Milestone
 
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uiyLtA5mo70?si=u4MuuchZxNU_SF7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+--------------------------------------------------------
 
 For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
 Milestone 2: Building and Wiring the Lanterns 
@@ -62,9 +72,8 @@ My next milestone is about making the lanterns sound reactive! I am excited to s
 
 # First Milestone
 
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rk84H7lvbns?si=rWQlfoO3zJcTjpi2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-
+---------------------------
 For my first milestone, I focused on the electrical aspects of my project.
 
 To start, I set up the WLED (white light emitting diode) software on my feather microcontroller. The WLED software is an open-source software, a software that allows for one to inspect, modify, and enhance the source code. Through WLED, I control LEDs with a web server or phone app. I needed to download the software and connect it to the proper 4G wifi connection. On the software, there were different settings that I needed to customize in order to fit the requirements for my lanterns. For example, in the preferences, I had five rings with 12 pixels each, so that would be 60 pixels total.
@@ -113,19 +122,17 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 
 
 # Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Adafruit ESP32 Feather V2 - 8MB Flash + 2 MB PSRAM | What the item is used for | $19.95 | <a href="https://www.adafruit.com/product/5400"> Link </a> |
-| NeoPixel Ring - 5 x 5050 RGB LED with Integrated Drivers | What the item is used for | $7.50 | <a href="https://www.adafruit.com/product/1643"> Link </a> |
-| Paper Lanterns| What the item is used for | $17.99 | <a href="https://www.amazon.com/dp/B0757KS4L8?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_JMMSSZR94M6K803XZNP4"> Link </a> |
-|4-wire 26awg Silicone Coated Ribbon Cable | What the item is used for | $19.98 | <a href="https://www.amazon.com/dp/B07PMS4WNN?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_6S4PN0M8W63V88Q4RCYG_1"> Link </a> |
-| JST Connector x 1 | What the item is used for | $1.50 | <a href="https://www.adafruit.com/product/1663"> Link </a> |
-| Female DC Power Adapter | What the item is used for | $2.00 | <a href="https://www.adafruit.com/product/368"> Link </a> |
-| 5v 2A Power Supply| What the item is used for | $7.95 | <a href="https://www.adafruit.com/product/276"> Link </a> |
-| JST 2-pin Extension Cable with On/Off Switch | What the item is used for | $2.95 | <a href="https://www.adafruit.com/product/3064"> Link </a> |
+| Adafruit ESP32 Feather V2 - 8MB Flash + 2 MB PSRAM |Microcontroller/ Audio Processing/ Control of LEDs| $19.95 | <a href="https://www.adafruit.com/product/5400"> Link </a> |
+| NeoPixel Ring - 5 x 5050 RGB LED with Integrated Drivers | Sound-Reactive Lighting Effects | $7.50 | <a href="https://www.adafruit.com/product/1643"> Link </a> |
+| Paper Lanterns| Housing for LEDs/ Decorative Element | $17.99 | <a href="https://www.amazon.com/dp/B0757KS4L8?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_JMMSSZR94M6K803XZNP4"> Link </a> |
+|4-wire 26awg Silicone Coated Ribbon Cable |Power and Signal Transmission | $19.98 | <a href="https://www.amazon.com/dp/B07PMS4WNN?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_6S4PN0M8W63V88Q4RCYG_1"> Link </a> |
+| JST Connector x 1 | Wire Connections| $1.50 | <a href="https://www.adafruit.com/product/1663"> Link </a> |
+| Female DC Power Adapter | Voltage and Current Power Connection | $2.00 | <a href="https://www.adafruit.com/product/368"> Link </a> |
+| 5v 2A Power Supply| Powering Componenet | $7.95 | <a href="https://www.adafruit.com/product/276"> Link </a> |
+| JST 2-pin Extension Cable with On/Off Switch | Power Control| $2.95 | <a href="https://www.adafruit.com/product/3064"> Link </a> |
 
 <!---# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
