@@ -1,5 +1,5 @@
 # Sound Reactive Paper Lanterns
-(315) Sound Reactive Paper Lanterns: Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
+(315) Sound Reactive Paper Lanterns: Transform your space with vibrant, sound-reactive paper lanterns controlled by an ESP32 Feather and the WLED software. This project combines Wifi-enabled lighting and LEDfx sound analysis to create a light show responding to music. Look closely to see the aspects of this enticing project!
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -27,7 +27,6 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uiyLtA5mo70?si=u4MuuchZxNU_SF7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -36,6 +35,7 @@ Milestone 2: Building and Wiring the Lanterns
 
 In this milestone, I assembled and wired the five paper lanterns to make them light up. This milestone was very mechanical and electrical-focused. Each lantern contains a NeoPixel Ring and is connected in a daisy chain configuration. All the nodes/wires are connected to the next in a line or chain in a sequence. 
 
+Picture of FINAL DISPLAY:
 <img src="finalsetup.png" alt="finaldisplay" width="400" height="500">
 
 
@@ -56,8 +56,6 @@ Below is the wiring diagram of the lanterns:
 When I first attached all the lanterns on the power rail and plugged everything in, only one light was lighting up. I thought it was an electrical issue, so I wrapped electrical tape on every single solder point to make sure there was nothing was incorrectly connected. I checked for continuity multiple times as well. The remaining four lanterns still haven’t lit up though, so I did some research on the WLED website. After countless amount of times not being able to get the lights to light up, I tried looking at the configuration settings on the WLED website. The length was set to lighting only 12 pixels instead of all 60 throughout all five rings. After I changed the setting, the lights all lit up successfully. 
 
 My next milestone is about making the lanterns sound reactive! I am excited to see the end product.
-
-
 
 
 
