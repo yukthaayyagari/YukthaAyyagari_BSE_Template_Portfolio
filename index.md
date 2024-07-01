@@ -19,19 +19,19 @@
 
 ----------------------------
 
-FLOW CHART of ENTIRE PROJECT
-<img src="flowchart.png" alt="photo of yuktha" width="400" height="500">
 
+<img src="flowchart.png" alt="photo of yuktha" width="400" height="500">
+Figure 1: Flow Chart of Entire Project
 The third milestone was all about making the lanterns reactive to sound. Apart from WLED software, I used the LEDfx software to run the lanterns. LEDfx software is a program on a computer that analyzes and captures sound and provides real-time audio effects. The difference between LEDfx and WLED is that LEDFx specializes in sound-reactive lighting effects, while WLED is used to enable WiFi-controlled LED strips with home automation integration.
 
 This downloading process took me a long time as several steps existed before installing LEDfx. I needed to have Python 3.9, and dependencies such as Homebrew and pip installed as well. Pip Install is a virtual environment and a command to install packages from package repositories. Packages are software applications that are made up of many files in a grouped format. I ran these applications using command lines on the Terminal. Once I was able to open the app, I connected the appropriate WLED device and changed the audio settings. 
 
 I named my device “Spheres” and was able to customize the effects as it was easier to identify my device. LEDfx app allowed me to explore the different settings and effect types that the lanterns can change into. There were multiple presets and effect configurations as well. I also downloaded the WLED app on my phone to connect to make the user configurations easier.
-LEDFX website:
+
 <img src="spheres1.png" alt="photo of yuktha" width="600" height="500">
 <img src="effectconfig.png" alt="photo of yuktha" width="400" height="500">
 
-
+Figure 2 & 3: LEDFX website
 ### Challenges:
 
 Despite being the shortest milestone, I encountered the most difficulty during its completion. I struggled with troubleshooting simple software issues, which made installing these applications significantly harder, taking me around two days to install the LEDfx software itself. I overcame these challenges by researching online and meticulously following installation instructions. Another issue I faced was that my lights weren’t properly reacting to sound using the software. After deleting the entire application and restarting my computer multiple times, I successfully resolved this issue, and my lights began working perfectly.
@@ -50,9 +50,9 @@ Milestone 2: Building and Wiring the Lanterns
 
 In this milestone, I assembled and wired the five paper lanterns to make them light up. This milestone was very mechanical and electrical-focused. Each lantern contains a NeoPixel Ring and is connected in a daisy chain configuration. All the nodes/wires are connected to the next in a line or chain in a sequence. 
 
-Picture of FINAL DISPLAY:
-<img src="finalsetup.png" alt="finaldisplay" width="400" height="500">
 
+<img src="finalsetup.png" alt="finaldisplay" width="400" height="500">
+Figure 4: Picture of FINAL DISPLAY
 
 To start, I assembled the single power rail for all five lanterns. To begin, I found the striped wire in the ribbon cable to use as the power wire (+5V). I separated the fourth wire from the cable since I only needed three wires (power, ground, and data). The middle wire was the data wire, with the third outer wire being the ground. (See figure below). I needed to connect the power rail to the JST connector so the lanterns have a power source. I attached the red/USB wire from the JST connector to the striped power wire on the power rail, which will carry the +5V power. Then, I connected the middle/data wire to the middle wire on the power rail. The data wire connects to the middle wire, transmitting data signals from the Feather to control the LEDs in each lantern. Finally, I attached the ground wire (G) to the edge wire on the power rail, which will complete the circuit. 
 
@@ -66,7 +66,7 @@ Below is the wiring diagram of the lanterns:
 
 <img src="splitdatawire.png" alt="data wire split" width="500" height="250">
 <img src="wiringdiagram.png" alt="data wire split" width="500" height="250">
-
+Figure 5 and 6: Wiring Diagram
 ### CHALLENGES:
 When I first attached all the lanterns on the power rail and plugged everything in, only one light was lighting up. I thought it was an electrical issue, so I wrapped electrical tape on every single solder point to make sure there was nothing was incorrectly connected. I checked for continuity multiple times as well. The remaining four lanterns still haven’t lit up though, so I did some research on the WLED website. After countless amount of times not being able to get the lights to light up, I tried looking at the configuration settings on the WLED website. The length was set to lighting only 12 pixels instead of all 60 throughout all five rings. After I changed the setting, the lights all lit up successfully. 
 
@@ -93,10 +93,9 @@ JST 2-pin Extension Cable with On/Off Switch - JST PH2 : JST (Japanese Solderles
 Female DC Power adapter
 5V 2A (2000mA) switching power supply
 
-### Feather ESP V2 Schematic:
 
 <img src="featherschematic.png" alt="data wire split" width="500" height="300">
-
+Figure 7: Feather ESP V2 Schematic
 
 To begin, I cut the female JST connector and screwed it into the Female DC power adapter, which had a 2.1mm DC jack on one end and a screw terminal block on the other. The red wire is screwed into positive, representing the power. On the other hand, the black wire is screwed into the negative part of the screw terminal, representing ground. This red-to-power and black-to-ground is the standard convention.
 
@@ -104,6 +103,7 @@ Next, I soldered the data wire, the middle wire on my 3-pin JST connector, onto 
 
 <img src="jstconnectorlabeled.png" alt="data wire split" width="550" height="500">
 <img src="overviewjst.png" alt="data wire split" width="300" height="300">
+Figure 8,9: JST Connect Diagram
 
 ### STAND WIRING:
 
@@ -111,6 +111,7 @@ Next, I moved on to creating my lights. I used 5 NeoPixel Ring - 5050 RGB LED wi
 Striped wire: 5V(Power)  2nd wire: data OUT 3rd wire: data IN 4th wire: Ground. 
 
 <img src="standwiring.png" alt="data wire split" width="300" height="250">
+Figure 10: Stand Wiring
 
 ### CHALLENGES:
 When I first started my project, I wasn’t able to download the software on the Feather. After using a different device, got the software onto the feather. The software only works on a network less than 5G, so I had trouble connecting all the devices. I overcame this issue by connecting to a peer’s hotspot and using their downloaded software on a non-apple product to connect. 
@@ -156,10 +157,11 @@ The games are displayed on the LED (Light Emitting Diode) DOT MATRIX module. Dat
 Below is a picture of the labeled features on the starter project:
 ![Headstone Image](buttonfunctions.png)
 
+Figure 11: Button Functions
 
-### Schematic Diagram:
 ![Headstone Image](overallschematic.png)
 
+Figure 12: Schematic Diagram
 Components Used:
 12mm Buzzer
 Electric Capacitator
@@ -172,7 +174,7 @@ LED dot matrix module: An LED dot matrix module creates patterns or characters b
 ### Button Schematic Diagram:
 
 <img src="button.png" alt="button schematic" width="700" height="300">
-
+Figure 13: Button Schematic
 In this console, a button works by closing an electrical circuit and sending a signal to the microcontroller. The microcontroller will detect the signal, process it through its preset instructions, and then trigger the corresponding action in the game. Once triggered, the microcontroller will update the LED dot matrix module to make the following changes. The microcontroller controls the rows and columns of the LED matrix using multiplexing, ensuring that the right visual display is on the module.
 -->
 ### Challenges:
