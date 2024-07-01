@@ -18,13 +18,19 @@
 
 
 ----------------------------
+
+FLOW CHART of ENTIRE PROJECT
+<img src="flowchart.png" alt="photo of yuktha" width="400" height="500">
+
 The third milestone was all about making the lanterns reactive to sound. Apart from WLED software, I used the LEDfx software to run the lanterns. LEDfx software is a program on a computer that analyzes and captures sound and provides real-time audio effects. The difference between LEDfx and WLED is that LEDFx specializes in sound-reactive lighting effects, while WLED is used to enable WiFi-controlled LED strips with home automation integration.
 
 This downloading process took me a long time as several steps existed before installing LEDfx. I needed to have Python 3.9, and dependencies such as Homebrew and pip installed as well. Pip Install is a virtual environment and a command to install packages from package repositories. Packages are software applications that are made up of many files in a grouped format. I ran these applications using command lines on the Terminal. Once I was able to open the app, I connected the appropriate WLED device and changed the audio settings. 
 
 I named my device “Spheres” and was able to customize the effects as it was easier to identify my device. LEDfx app allowed me to explore the different settings and effect types that the lanterns can change into. There were multiple presets and effect configurations as well. I also downloaded the WLED app on my phone to connect to make the user configurations easier.
+LEDFX website:
+<img src="spheres1.png" alt="photo of yuktha" width="600" height="500">
+<img src="effectconfig.png" alt="photo of yuktha" width="400" height="500">
 
-PICTURES
 
 ### Challenges:
 
@@ -40,7 +46,6 @@ So far, in this project, I learned many key engineering topics. I was exposed to
 
 --------------------------------------------------------
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
 Milestone 2: Building and Wiring the Lanterns 
 
 In this milestone, I assembled and wired the five paper lanterns to make them light up. This milestone was very mechanical and electrical-focused. Each lantern contains a NeoPixel Ring and is connected in a daisy chain configuration. All the nodes/wires are connected to the next in a line or chain in a sequence. 
