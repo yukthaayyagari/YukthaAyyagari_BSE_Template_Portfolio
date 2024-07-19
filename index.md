@@ -5,6 +5,9 @@
 |:--:|:--:|:--:|:--:|
 | Yuktha A | Dougherty Valley High School | Civil Engineering | Incoming Senior
 
+
+<img src="finalheadshot.png" alt="photo of yuktha" width="400" height="500">
+
 <img src="headshot.png" alt="photo of yuktha" width="400" height="500">
   
 <!---This is an HTML comment in Markdown -->
