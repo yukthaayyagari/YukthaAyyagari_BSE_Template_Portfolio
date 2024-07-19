@@ -17,6 +17,9 @@ After researching possible modifications for my lanterns, I became interested in
 
 By using an Arduino UNO, and the DFRobot Voice Module Device, I can turn on, turn off, and change the LEDs to seven different colors. These LED strips are all stuck on these handmade stars which are wired together using an Arduino. 
 
+DEMO:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QGX3tDZsAwU?si=1WVvgTEczR-Gya4d&amp;start=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+
 
 What I Used:
 Arduino UNO: The central microcontroller that manages inputs and outputs. 
@@ -28,7 +31,8 @@ LED Strips: These are used to create the starry effect. Each LED can be controll
 Handmade Stars: These stars are crafted to house the LED strips using vellum paper, creating a visually appealing effect. 
 
 Wiring: Necessary to connect the LEDs, voice module, and Arduino. 
-
+Figure: Inside the Stars
+<img src="vellumlight.png" alt="voice" width="400" height="300">
 
 Figure: DFROBOT VOICE MODULE
 <img src="voice.png" alt="voice" width="400" height="300">
