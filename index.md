@@ -13,12 +13,13 @@
 # Modifications
 ----------------------------
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QGX3tDZsAwU?si=x2I9vTJRT5KselOJ&amp;start=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+
+
 After researching possible modifications for my lanterns, I became interested in voice commands. I imagined the lanterns to be similar to planets, so another modification I wanted to create was to add to these starry night stars. So that’s how I created my modification: voice-automated LED stars. 
 
 By using an Arduino UNO, and the DFRobot Voice Module Device, I can turn on, turn off, and change the LEDs to seven different colors. These LED strips are all stuck on these handmade stars which are wired together using an Arduino. 
-
-DEMO:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QGX3tDZsAwU?si=1WVvgTEczR-Gya4d&amp;start=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
 
 
 What I Used:
