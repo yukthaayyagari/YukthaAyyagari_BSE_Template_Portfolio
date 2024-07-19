@@ -6,9 +6,9 @@
 | Yuktha A | Dougherty Valley High School | Civil Engineering | Incoming Senior
 
 
-<img src="finalheadshot.png" alt="photo of yuktha" width="400" height="500">
+<img src="finalheadshot.png" alt="photo of yuktha" width="400" height="500"> | <img src="headshot.png" alt="photo of yuktha" width="400" height="500">
 
-<img src="headshot.png" alt="photo of yuktha" width="400" height="500">
+
   
 <!---This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
@@ -26,6 +26,7 @@ By using an Arduino UNO, and the DFRobot Voice Module Device, I can turn on, tur
 
 
 What I Used:
+
 Arduino UNO: The central microcontroller that manages inputs and outputs. 
 
 DFRobot Voice Module: This module captures voice commands and converts them into signals the Arduino can process. 
@@ -41,7 +42,7 @@ Wiring: Necessary to connect the LEDs, voice module, and Arduino.
 <img src="vellumlight.png" alt="voice" width="300" height="400">
 
 
-Figure1: Inside the Stars
+Figure 1: Inside the Stars
 
 
 
@@ -49,6 +50,7 @@ Figure1: Inside the Stars
 
 
 Figure2 : DFROBOT VOICE MODULE
+
 Source: DFROBOT MODULE Website Documentation
 
 
