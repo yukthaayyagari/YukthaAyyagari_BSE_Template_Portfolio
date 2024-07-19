@@ -13,8 +13,45 @@
 # Modifications
 ----------------------------
 
+After researching possible modifications for my lanterns, I became interested in voice commands. I imagined the lanterns to be similar to planets, so another modification I wanted to create was to add to these starry night stars. So that’s how I created my modification: voice-automated LED stars. 
 
+By using an Arduino UNO, and the DFRobot Voice Module Device, I can turn on, turn off, and change the LEDs to seven different colors. These LED strips are all stuck on these handmade stars which are wired together using an Arduino. 
+
+
+What I Used:
+Arduino UNO: The central microcontroller that manages inputs and outputs. 
+
+DFRobot Voice Module: This module captures voice commands and converts them into signals the Arduino can process. 
+
+LED Strips: These are used to create the starry effect. Each LED can be controlled individually to display different colors. 
+
+Handmade Stars: These stars are crafted to house the LED strips using vellum paper, creating a visually appealing effect. 
+
+Wiring: Necessary to connect the LEDs, voice module, and Arduino. 
+
+
+Figure: DFROBOT VOICE MODULE
+<img src="voice.png" alt="voice" width="400" height="300">
+
+After downloading the Adafruit Neopixel Library as well as the DFRobot Library on the Arduino IDE, I was able to write the appropriate code to program the LED strips.
+
+CODE:
 <a href="https://github.com/yukthaayyagari/YukthaAyyagari_BSE_Template_Portfolio/edit/gh-pages/main.cpp">Modification</a>
+
+This code integrates the Adafruit Neopixel Library and the DFRobot Voice Module Library to control LED strips via voice commands using an Arduino. It initializes the LED strips and voice module, listens for specific voice commands, and executes corresponding LED patterns such as turning the LEDs on, and off and changing colors. The code includes several functions to create various LED effects, like color wipes and rainbow fades.
+
+
+Challenges: 
+
+In my modification process, I had a lot of trouble splitting the power and making sure each component had enough power. The LEDs needed 5V batteries, so I wasn’t able to power it with my 9V battery. I also had to troubleshoot the code many times through my Arduino UNO. My code wouldn’t flash properly, but after reflashing, disconnecting, and reconnecting, it was able to light up again. A day before demo night, my LEDs had connection issues, causing my Arduino to stop working, but after replacing the Arduino and the wires, I was able to slowly start getting the stars to turn on.
+
+What’s next? 
+
+If I had infinite time, I would like to connect my lanterns and stars to a home assistant. This integration would make the lanterns much easier to control and enhance their functionality.
+
+Lessons Learned:
+I learned many engineering concepts that I wouldn’t have learned in my regular school curriculum. I worked with a lot of electrical engineering concepts like how to Solder, Dremel, and work with wire connections. One of the most significant lessons I learned was the importance of troubleshooting. Facing and solving various challenges taught me the value of persistence and patience. I learned to systematically solve problems, test solutions, and stay resilient despite several setbacks. This experience improved my technical skills and fostered a mindset of perseverance and continuous improvement.
+
 
 
 # Final Milestone
