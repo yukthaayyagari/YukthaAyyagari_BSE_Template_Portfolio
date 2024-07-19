@@ -31,8 +31,13 @@ LED Strips: These are used to create the starry effect. Each LED can be controll
 Handmade Stars: These stars are crafted to house the LED strips using vellum paper, creating a visually appealing effect. 
 
 Wiring: Necessary to connect the LEDs, voice module, and Arduino. 
+
+
+
 Figure: Inside the Stars
-<img src="vellumlight.png" alt="voice" width="400" height="300">
+<img src="vellumlight.png" alt="voice" width="300" height="400">
+
+
 
 Figure: DFROBOT VOICE MODULE
 <img src="voice.png" alt="voice" width="400" height="300">
