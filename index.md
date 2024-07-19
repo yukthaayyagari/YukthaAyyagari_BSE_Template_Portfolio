@@ -38,18 +38,295 @@ Wiring: Necessary to connect the LEDs, voice module, and Arduino.
 
 
 
-Figure: Inside the Stars
 <img src="vellumlight.png" alt="voice" width="300" height="400">
 
 
+Figure1: Inside the Stars
 
-Figure: DFROBOT VOICE MODULE
+
+
 <img src="voice.png" alt="voice" width="400" height="300">
+
+
+Figure2 : DFROBOT VOICE MODULE
+Source: DFROBOT MODULE Website Documentation
+
 
 After downloading the Adafruit Neopixel Library as well as the DFRobot Library on the Arduino IDE, I was able to write the appropriate code to program the LED strips.
 
 CODE:
-<a href="https://github.com/yukthaayyagari/YukthaAyyagari_BSE_Template_Portfolio/edit/gh-pages/main.cpp">Modification</a>
+```C++
+/*!
+ * @file  i2c.ino
+ * @brief Control the voice recognition module via I2C
+ * @n  Get the recognized command ID and play the corresponding reply audio according to the ID;
+ * @n  Get and set the wake-up state duration
+ * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @licence  The MIT License (MIT)
+ * @author  [qsjhyy](yihuan.huang@dfrobot.com)
+ * @version  V1.0
+ * @date  2022-04-02
+ * @url  https://github.com/DFRobot/DFRobot_DF2301Q
+ */
+#include "DFRobot_DF2301Q.h"
+#include <Adafruit_NeoPixel.h>
+
+#define STRIP1PIN 6
+// #define STRIP2PIN 7
+// #define STRIP3PIN 8
+// #define STRIP4PIN 9
+#define BRIGHTNESS 50 
+Adafruit_NeoPixel strip1 = Adafruit_NeoPixel(72, STRIP1PIN, NEO_GRB + NEO_KHZ800);
+// Adafruit_NeoPixel strip2= Adafruit_NeoPixel(30, STRIP2PIN, NEO_GRB + NEO_KHZ800);
+// Adafruit_NeoPixel strip3 = Adafruit_NeoPixel(30, STRIP3PIN, NEO_GRB + NEO_KHZ800);
+// Adafruit_NeoPixel strip4 = Adafruit_NeoPixel(61, STRIP4PIN, NEO_GRB + NEO_KHZ800);
+
+//I2C communication
+DFRobot_DF2301Q_I2C asr;
+
+void setup() {
+  #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+  clock_prescale_set(clock_div_1);
+  #endif
+  // END of Trinket-specific code.
+
+  strip1.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
+  strip1.show();            // Turn OFF all pixels ASAP
+  strip1.setBrightness(BRIGHTNESS);
+
+  Serial.begin(115200);
+
+  // pinMode(Led, OUTPUT);    //Init LED pin to output mode
+  // digitalWrite(Led, LOW);  //Set LED pin to low 
+
+  // Init the sensor
+  while (!(asr.begin())) {
+    Serial.println("Communication with device failed, please check connection");
+    delay(3000);
+  }
+  Serial.println("Begin ok!");
+
+  /**
+   * @brief Set voice volume
+   * @param voc - Volume value(1~7)
+   */
+  asr.setVolume(4);
+
+  /**
+     @brief Set mute mode
+     @param mode - Mute mode; set value 1: mute, 0: unmute
+  */
+  asr.setMuteMode(0);
+
+  /**
+     @brief Set wake-up duration
+     @param wakeTime - Wake-up duration (0-255)
+  */
+  asr.setWakeTime(20);
+
+  /**
+     @brief Get wake-up duration
+     @return The currently-set wake-up period
+  */
+  uint8_t wakeTime = 0;
+  wakeTime = asr.getWakeTime();
+  Serial.print("wakeTime = ");
+  Serial.println(wakeTime);
+
+  // asr.playByCMDID(1);   // Wake-up command
+
+  /**
+     @brief Play the corresponding reply audio according to the ID
+     @param CMDID - command word ID
+  */
+  //asr.playByCMDID(23);  // Command word ID
+}
+
+void loop() {
+  /**
+     @brief Get the ID corresponding to the command word 
+     @return Return the obtained command word ID, returning 0 means no valid ID is obtained
+  */
+  uint8_t CMDID = asr.getCMDID();
+  switch (CMDID) {
+    case 103:                                                  //If the command is “Turn on the light”
+      Serial.println("received'Turn on the light',command flag'103'");  //Serial transmits "received"Turn on the light",command flag"103
+      colorWipe(strip1.Color(255,   0,   0)     , 50); // Red
+      colorWipe(strip1.Color(  0, 255,   0)     , 50); // Green
+      colorWipe(strip1.Color(  0,   0, 255)     , 50); // Blue
+      colorWipe(strip1.Color(  0,   0,   0, 255), 50); // True white (not RGB white)
+
+      whiteOverRainbow(75, 5);
+
+      pulseWhite(5);
+
+      rainbowFade2White(3, 3, 1);
+
+      break;
+
+    case 104:                                                  //If the command is “Turn off the light”
+      Serial.println("received'Turn off the light', command flag '104' ");  //The serial transmits "received"Turn off the light",command flag"104""
+      strip1.clear(); 
+      // strip2.clear(); 
+      // strip3.clear(); 
+      // strip4.clear(); 
+      break;
+
+    // case 119:
+    //   Serial.println("received'Set to green',command flag'119'"); //The serial transmits "received"Set to green",command flag"119""
+    //   for (int i=0; i<72;i++){
+    //     strip1.setPixelColor(i, 0, 255, 0); //code that sets all the led pixels to red
+    //   }
+    //   for (int i=0; i<30;i++){
+    //     strip2.setPixelColor(i, 0, 255, 0); //code that sets all the led pixels to red
+    //   }
+    //   for (int i=0; i<30;i++){
+    //     strip3.setPixelColor(i, 0, 255, 0); //code that sets all the led pixels to red
+    //   }
+    //   for (int i=0; i<61;i++){
+    //     strip4.setPixelColor(i, 0, 255, 0); //code that sets all the led pixels to red
+    //   }
+      strip1.show();
+      // strip2.show();
+      // strip3.show();
+      // strip4.show();
+      delay(400);
+      break;
+
+    default:
+      if (CMDID != 0) {
+        Serial.print("CMDID = ");  //Printing command ID
+        Serial.println(CMDID);
+      }
+      
+  }
+
+  
+    
+  delay(300);
+
+}
+
+
+void colorWipe(uint32_t color, int wait) {
+  for(int i=0; i<strip1.numPixels(); i++) { // For each pixel in strip1...
+    strip1.setPixelColor(i, color);         //  Set pixel's color (in RAM)
+    strip1.show();                          //  Update strip to match
+    delay(wait);                           //  Pause for a moment
+  }
+}
+
+void whiteOverRainbow(int whiteSpeed, int whiteLength) {
+
+  if(whiteLength >= strip1.numPixels()) whiteLength = strip1.numPixels() - 1;
+
+  int      head          = whiteLength - 1;
+  int      tail          = 0;
+  int      loops         = 3;
+  int      loopNum       = 0;
+  uint32_t lastTime      = millis();
+  uint32_t firstPixelHue = 0;
+
+  for(;;) { // Repeat forever (or until a 'break' or 'return')
+    for(int i=0; i<strip1.numPixels(); i++) {  // For each pixel in strip1...
+      if(((i >= tail) && (i <= head)) ||      //  If between head & tail...
+         ((tail > head) && ((i >= tail) || (i <= head)))) {
+        strip1.setPixelColor(i, strip1.Color(0, 0, 0, 255)); // Set white
+      } else {                                             // else set rainbow
+        int pixelHue = firstPixelHue + (i * 65536L / strip1.numPixels());
+        strip1.setPixelColor(i, strip1.gamma32(strip1.ColorHSV(pixelHue)));
+      }
+    }
+
+    strip1.show(); // Update strip with new contents
+    // There's no delay here, it just runs full-tilt until the timer and
+    // counter combination below runs out.
+
+    firstPixelHue += 40; // Advance just a little along the color wheel
+
+    if((millis() - lastTime) > whiteSpeed) { // Time to update head/tail?
+      if(++head >= strip1.numPixels()) {      // Advance head, wrap around
+        head = 0;
+        if(++loopNum >= loops) return;
+      }
+      if(++tail >= strip1.numPixels()) {      // Advance tail, wrap around
+        tail = 0;
+      }
+      lastTime = millis();                   // Save time of last movement
+    }
+  }
+}
+
+void pulseWhite(uint8_t wait) {
+  for(int j=0; j<256; j++) { // Ramp up from 0 to 255
+    // Fill entire strip with white at gamma-corrected brightness level 'j':
+    strip1.fill(strip1.Color(0, 0, 0, strip1.gamma8(j)));
+    strip1.show();
+    delay(wait);
+  }
+
+  for(int j=255; j>=0; j--) { // Ramp down from 255 to 0
+    strip1.fill(strip1.Color(0, 0, 0, strip1.gamma8(j)));
+    strip1.show();
+    delay(wait);
+  }
+}
+
+void rainbowFade2White(int wait, int rainbowLoops, int whiteLoops) {
+  int fadeVal=0, fadeMax=100;
+
+  // Hue of first pixel runs 'rainbowLoops' complete loops through the color
+  // wheel. Color wheel has a range of 65536 but it's OK if we roll over, so
+  // just count from 0 to rainbowLoops*65536, using steps of 256 so we
+  // advance around the wheel at a decent clip.
+  for(uint32_t firstPixelHue = 0; firstPixelHue < rainbowLoops*65536;
+    firstPixelHue += 256) {
+
+    for(int i=0; i<strip1.numPixels(); i++) { // For each pixel in strip1...
+
+      // Offset pixel hue by an amount to make one full revolution of the
+      // color wheel (range of 65536) along the length of the strip
+      // (strip1.numPixels() steps):
+      uint32_t pixelHue = firstPixelHue + (i * 65536L / strip1.numPixels());
+
+      // strip1.ColorHSV() can take 1 or 3 arguments: a hue (0 to 65535) or
+      // optionally add saturation and value (brightness) (each 0 to 255).
+      // Here we're using just the three-argument variant, though the
+      // second value (saturation) is a constant 255.
+      strip1.setPixelColor(i, strip1.gamma32(strip1.ColorHSV(pixelHue, 255,
+        255 * fadeVal / fadeMax)));
+    }
+
+    strip1.show();
+    delay(wait);
+
+    if(firstPixelHue < 65536) {                              // First loop,
+      if(fadeVal < fadeMax) fadeVal++;                       // fade in
+    } else if(firstPixelHue >= ((rainbowLoops-1) * 65536)) { // Last loop,
+      if(fadeVal > 0) fadeVal--;                             // fade out
+    } else {
+      fadeVal = fadeMax; // Interim loop, make sure fade is at max
+    }
+  }
+
+  for(int k=0; k<whiteLoops; k++) {
+    for(int j=0; j<256; j++) { // Ramp up 0 to 255
+      // Fill entire strip with white at gamma-corrected brightness level 'j':
+      strip1.fill(strip1.Color(0, 0, 0, strip1.gamma8(j)));
+      strip1.show();
+    }
+    delay(1000); // Pause 1 second
+    for(int j=255; j>=0; j--) { // Ramp down 255 to 0
+      strip1.fill(strip1.Color(0, 0, 0, strip1.gamma8(j)));
+      strip1.show();
+    }
+  }
+
+  delay(500); // Pause 1/2 second
+}
+
+```
+
 
 This code integrates the Adafruit Neopixel Library and the DFRobot Voice Module Library to control LED strips via voice commands using an Arduino. It initializes the LED strips and voice module, listens for specific voice commands, and executes corresponding LED patterns such as turning the LEDs on, and off and changing colors. The code includes several functions to create various LED effects, like color wipes and rainbow fades.
 
@@ -73,7 +350,7 @@ I learned many engineering concepts that I wouldn’t have learned in my regular
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RpSbDc5aFOY?si=y1K0bTOWYw7Uj53M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <img src="flowchart.png" alt="photo of yuktha" width="400" height="500">
-Figure 1: Flow Chart of Entire Project
+Figure 3: Flow Chart of Entire Project
 
 --
 The third milestone was all about making the lanterns reactive to sound. Apart from WLED software, I used the LEDfx software to run the lanterns. LEDfx software is a program on a computer that analyzes and captures sound and provides real-time audio effects. The difference between LEDfx and WLED is that LEDFx specializes in sound-reactive lighting effects, while WLED is used to enable WiFi-controlled LED strips with home automation integration.
@@ -85,7 +362,7 @@ I named my device “Spheres” and was able to customize the effects as it was 
 <img src="spheres1.png" alt="photo of yuktha" width="600" height="500">
 <img src="effectconfig.png" alt="photo of yuktha" width="400" height="500">
 
-Figure 2 & 3: LEDFX website
+Figure 4 & 5: LEDFX website
 ### Challenges:
 
 Despite being the shortest milestone, I encountered the most difficulty during its completion. I struggled with troubleshooting simple software issues, which made installing these applications significantly harder, taking me around two days to install the LEDfx software itself. I overcame these challenges by researching online and meticulously following installation instructions. Another issue I faced was that my lights weren’t properly reacting to sound using the software. After deleting the entire application and restarting my computer multiple times, I successfully resolved this issue, and my lights began working perfectly.
@@ -106,7 +383,7 @@ In this milestone, I assembled and wired the five paper lanterns to make them li
 
 
 <img src="finaldisplay1.png" alt="finaldisplay" width="800" height="500">
-Figure 4: Picture of FINAL DISPLAY
+Figure 6: Picture of FINAL DISPLAY
 
 To start, I assembled the single power rail for all five lanterns. To begin, I found the striped wire in the ribbon cable to use as the power wire (+5V). I separated the fourth wire from the cable since I only needed three wires (power, ground, and data). The middle wire was the data wire, with the third outer wire being the ground. (See figure below). I needed to connect the power rail to the JST connector so the lanterns have a power source. I attached the red/USB wire from the JST connector to the striped power wire on the power rail, which will carry the +5V power. Then, I connected the middle/data wire to the middle wire on the power rail. The data wire connects to the middle wire, transmitting data signals from the Feather to control the LEDs in each lantern. Finally, I attached the ground wire (G) to the edge wire on the power rail, which will complete the circuit. 
 
@@ -120,7 +397,7 @@ Below is the wiring diagram of the lanterns:
 
 <img src="splitdatawire.png" alt="data wire split" width="500" height="250">
 <img src="wiringdiagram.png" alt="data wire split" width="500" height="250">
-Figure 5 and 6: Wiring Diagram
+Figure 7 and 8: Wiring Diagram
 ### CHALLENGES:
 When I first attached all the lanterns on the power rail and plugged everything in, only one light was lighting up. I thought it was an electrical issue, so I wrapped electrical tape on every single solder point to make sure there was nothing was incorrectly connected. I checked for continuity multiple times as well. The remaining four lanterns still haven’t lit up though, so I did some research on the WLED website. After countless amount of times not being able to get the lights to light up, I tried looking at the configuration settings on the WLED website. The length was set to lighting only 12 pixels instead of all 60 throughout all five rings. After I changed the setting, the lights all lit up successfully. 
 
@@ -149,7 +426,7 @@ Female DC Power adapter
 
 
 <img src="featherschematic.png" alt="data wire split" width="500" height="300">
-Figure 7: Feather ESP V2 Schematic
+Figure 9: Feather ESP V2 Schematic
 
 To begin, I cut the female JST connector and screwed it into the Female DC power adapter, which had a 2.1mm DC jack on one end and a screw terminal block on the other. The red wire is screwed into positive, representing the power. On the other hand, the black wire is screwed into the negative part of the screw terminal, representing ground. This red-to-power and black-to-ground is the standard convention.
 
@@ -157,7 +434,7 @@ Next, I soldered the data wire, the middle wire on my 3-pin JST connector, onto 
 
 <img src="jstconnectorlabeled.png" alt="data wire split" width="550" height="500">
 <img src="overviewjst.png" alt="data wire split" width="300" height="300">
-Figure 8,9: JST Connect Diagram
+Figure 10,11: JST Connect Diagram
 
 ### STAND WIRING:
 
@@ -165,7 +442,7 @@ Next, I moved on to creating my lights. I used 5 NeoPixel Ring - 5050 RGB LED wi
 Striped wire: 5V(Power)  2nd wire: data OUT 3rd wire: data IN 4th wire: Ground. 
 
 <img src="standwiring.png" alt="data wire split" width="300" height="250">
-Figure 10: Stand Wiring
+Figure 12: Stand Wiring
 
 ### CHALLENGES:
 When I first started my project, I wasn’t able to download the software on the Feather. After using a different device, got the software onto the feather. The software only works on a network less than 5G, so I had trouble connecting all the devices. I overcame this issue by connecting to a peer’s hotspot and using their downloaded software on a non-apple product to connect. 
@@ -211,11 +488,11 @@ The games are displayed on the LED (Light Emitting Diode) DOT MATRIX module. Dat
 Below is a picture of the labeled features on the starter project:
 ![Headstone Image](buttonfunctions.png)
 
-Figure 11: Button Functions
+Figure 13: Button Functions
 
 ![Headstone Image](overallschematic.png)
 
-Figure 12: Schematic Diagram
+Figure 14: Schematic Diagram
 Components Used:
 12mm Buzzer
 Electric Capacitator
@@ -228,13 +505,9 @@ LED dot matrix module: An LED dot matrix module creates patterns or characters b
 ### Button Schematic Diagram:
 
 <img src="button.png" alt="button schematic" width="700" height="300">
-Figure 13: Button Schematic
+Figure 15: Button Schematic
 In this console, a button works by closing an electrical circuit and sending a signal to the microcontroller. The microcontroller will detect the signal, process it through its preset instructions, and then trigger the corresponding action in the game. Once triggered, the microcontroller will update the LED dot matrix module to make the following changes. The microcontroller controls the rows and columns of the LED matrix using multiplexing, ensuring that the right visual display is on the module.
 -->
 ### Challenges:
 
 Despite the project seeming smooth, there were quite a lot of difficulties I faced along the way. As I was attaching the outer acrylic frame, the side piece cracked, blocking my way of connecting the USB port to power the console. Another challenge I faced was regarding the buzzer. My 12 mm buzzer was originally soldered in the wrong direction. When trying to desolder it, the wires snapped and got stuck in the PCB. After an hour of trying different methods to remove the wire, I ended up having to start over my entire project. A lesson I learned is that sometimes you have to restart, but you will be more efficient and effective the second time around. I’m excited to start my main project: Sound Reactive Paper Lanterns. 
-
-
-
-To watch the BSE tutorial on how to create a portfolio, click here.
