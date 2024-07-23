@@ -189,7 +189,8 @@ The next milestone includes of assembling all the lanterns and attaching them to
 ### CODE:
 
 MODIFICATION CODE:
-```C++
+
+```ruby
 /*!
  * @file  i2c.ino
  * @brief Control the voice recognition module via I2C
@@ -458,8 +459,8 @@ void rainbowFade2White(int wait, int rainbowLoops, int whiteLoops) {
 
   delay(500); // Pause 1/2 second
 }
-
 ```
+
 This code integrates the Adafruit Neopixel Library and the DFRobot Voice Module Library to control LED strips via voice commands using an Arduino. It initializes the LED strips and voice module, listens for specific voice commands, and executes corresponding LED patterns such as turning the LEDs on, and off and changing colors. The code includes several functions to create various LED effects, like color wipes and rainbow fades.
 
 
@@ -475,6 +476,19 @@ This code integrates the Adafruit Neopixel Library and the DFRobot Voice Module 
 | Female DC Power Adapter | Voltage and Current Power Connection | $2.00 | <a href="https://www.adafruit.com/product/368"> Link </a> |
 | 5v 2A Power Supply| Powering Componenet | $7.95 | <a href="https://www.adafruit.com/product/276"> Link </a> |
 | JST 2-pin Extension Cable with On/Off Switch | Power Control| $2.95 | <a href="https://www.adafruit.com/product/3064"> Link </a> |
+
+# Resources/ Works Cited
+
+Project Guide:<a href="https://www.adafruit.com/product/1643](https://learn.adafruit.com/sound-reactive-paper-lanterns-with-led-fx"> Link </a>
+
+DFRobot Voice Module:<a href="https://wiki.dfrobot.com/SKU_SEN0539-EN_Gravity_Voice_Recognition_Module_I2C_UART#target_9
+"> Link </a>
+
+LEDFx Instructions: <a href="https://ledfx.readthedocs.io/en/latest/"> Link </a>
+
+RGB LED Light Strips Documentation: <a href="https://learn.adafruit.com/rgb-led-strips/usage
+"> Link </a>
+
 
 <!---# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
